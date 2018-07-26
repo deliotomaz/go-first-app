@@ -26,14 +26,14 @@ type Widgets []Widget
 // }
 
 type UserRepository interface {
-	Count() int64,error
-	FindById(id int64) (*User, error)
-	Save(item struct{}) (*User, error)
-	List(page int, pageSize int)
-	SearchByName(name string) (*Users, error)
+	Count() (int, error)
+	// FindById(id int64) (*User, error)
+	// Save(item struct{}) (*User, error)
+	// List(page int, pageSize int)
+	// SearchByName(name string) (*Users, error)
 }
 type WidgetsRepository interface {
-	Count() error
+	Count() (int, error)
 	FindById(id int64) (*Widget, error)
 	Save(item struct{}) (*Widget, error)
 	SearchByName(name string) (*Widgets, error)

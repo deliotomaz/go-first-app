@@ -1,0 +1,14 @@
+{
+  "name": "myproject",
+  "dependencies": {
+    "angular-translate": "^2.16.0",
+    "angular-translate-loader-url": "^2.16.0",
+    "angular-translate-loader-static-files": "^2.16.0",
+    "animate.css": "^3.5.2",
+    "angular-ui-select": "^0.19.8",
+    "datatables.net": "^1.10.16",
+    "angular-datatables": "^5.0.0",
+    "datatables-responsive": "^2.2.1",
+    "datatables.net-responsive": "^2.2.0"
+  }
+}

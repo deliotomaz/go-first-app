@@ -1,0 +1,34 @@
+﻿<div id="page-wrapper" class="open">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar">
+            <li class="sidebar-main"><a href="/">Dashboard <span class="menu-icon fa fa-tachometer"></span></a></li>
+            <li class="sidebar-title"><span>NAVIGATION</span></li>
+            <li class="sidebar-list"><a ui-sref="app.home" href="#">Dashboard <span class="menu-icon fa fa-tachometer"></span></a></li>
+            <li class="sidebar-list"><a ui-sref="app.user" href="#">Users <span class="menu-icon fa fa-users"></span></a></li>
+            <li class="sidebar-list"><a ui-sref="app.widget" href="#">Widgets <span class="menu-icon fa fa-cubes"></span></a></li>
+        </ul>
+        <div class="sidebar-footer col-xs-12"><a href="#" target="_blank">&copy; 2015 Red Ventures</a></div>
+    </div>
+    <!-- End Sidebar -->
+    <div id="content-wrapper" >
+        <div class="page-content">
+            <!-- Header Bar -->
+            <div class="row header col-xs-12" ng-controller="ProfileController as vm">
+                <div class="user pull-right">
+                    <a href="#" ng-click="logout()">Sair</a>
+                    <div class="item dropdown">
+                        <a href="#" class="dropdown-toggle"><img src="img/avatar.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="meta">
+                    <div class="page">Dashboard</div>
+                    <div class="breadcrumb-links">Home / Dashboard</div>
+                </div>
+            </div>
+            <!-- End Header Bar -->
+            <div ui-view></div>
+
+        </div><!-- End Page Content -->
+    </div><!-- End Content Wrapper -->
+</div><!-- End Page Wrapper -->
