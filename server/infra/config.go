@@ -1,10 +1,15 @@
 package infra
 
 const (
-	MONGODB_HOST            = "mongodb://localhost:27017"
-	MONGODB_DATABASE        = "testesetup"
-	MONGO_USER              = ""
+	//Mongo database host
+	MONGODB_HOST = "mongodb://localhost:27017"
+	//Mongo database name
+	MONGODB_DATABASE = "widgets-app"
+	//Mongo database user
+	MONGO_USER = ""
+	// Mongo database password
 	MONGO_PWD               = ""
 	MONGODB_CONNECTION_POOL = 5
-	API_PORT                = 3000
+	//API port
+	API_PORT = 3000
 )
