@@ -1,6 +1,6 @@
-#Go First APP
+# Go First APP
 
-##Para executar
+## Para executar
 - O sistema está usando JSON Web Token para autenticação. Para ganhar agilidade não implementei a geração. Utilizei o AWS Cognito.
 -Usuário e senha enviei por email
 
