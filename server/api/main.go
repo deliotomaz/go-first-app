@@ -28,7 +28,12 @@ func main() {
 
 	userRepository := infra.NewUserRepository(mPool, session, infra.MONGODB_DATABASE)
 	userService := service.NewUserAppService(userRepository)
+
+	widgetRepository := infra.NewWidgetRepository(mPool, session, infra.MONGODB_DATABASE)
+	widgetService := service.NewWidgetAppService(widgetRepository)
+
 	BuildUserHttpHandlers(router, userService)
+	BuildWidgetHttpHandlers(router, widgetService)
 	http.Handle("/", router)
 	router.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)

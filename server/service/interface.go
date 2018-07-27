@@ -1,10 +1,17 @@
 package service
 
+import (
+	"../domain"
+)
+
 type UserAppService interface {
 	GetCount() (int, error)
-	//	ListTopNameByName(name string) (*[]string, error)
+	FindUserById(id int64) (domain.User, error)
+	ListUsers() (domain.Users, error)
 }
 type WidgetAppService interface {
 	GetCount() (int, error)
-	//	ListTopNameByName(name string) (*[]string, error)
+	FindWidgetById(id int64) (domain.Widget, error)
+	ListWidgets() (domain.Widgets, error)
+	AddUpdate(widget domain.Widget) error
 }

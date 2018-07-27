@@ -38,3 +38,61 @@
         border-top-left-radius: 0;
         border-top-right-radius: 0;
     }
+.row-hover:hover, .row-hover:hover td {
+    background: aliceblue;
+    cursor: pointer
+}
+.size-tran {
+    -webkit-transition: width 0.5s; /* Safari */
+    transition: width 0.5s;
+}
+.fades {
+    transition: all linear 0.5s;
+}
+
+    .fades.ng-hide {
+        opacity: 0;
+    }
+    .fades.ng-show {
+        opacity: 100;
+    }
+
+    .col-lg-0 > div {
+        visibility: collapse;
+        
+    }
+.contact-box.center-version {
+    border: 1px solid #e7eaec;
+    padding: 0;
+}
+
+.contact-box {
+    background-color: #ffffff;
+    border: 1px solid #e7eaec;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.m,.m img{
+    margin:10px
+}
+.innerUser {
+    transition: all linear 0.5s;
+    opacity: 0;
+}
+    .ng-show {
+        opacity: 1;
+    }
+
+.innerUser {
+    transition: all linear 1s;
+    opacity: 1;
+}
+
+    .innerUser.ng-hide {
+        opacity: 0;
+    }
+
+.ng-hide {
+    opacity: 0;
+    transition: none 0;
+}

@@ -5,6 +5,7 @@
         .directive('loading', loading)
         .run(['SecurityService', '$rootScope', '$q', '$location', function (SecurityService, $rootScope, $q, $location) {
 
+            $rootScope.baseServiceUrl = 'http://localhost:3000/';
             SecurityService.fillAuthData();
             $rootScope.logout = function () {
                 SecurityService.logout();

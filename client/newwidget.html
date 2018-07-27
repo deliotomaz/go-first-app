@@ -1,0 +1,46 @@
+﻿<div class="row">
+    <!-- Widget listing -->
+    <div class="col-lg-12">
+        <div class="widget">
+            <!--<div class="widget-header">Create/Edit Template</div>-->
+            <div class="widget-body">
+                <form class="form-horizontal" novalidate name="myForm">
+                    <legend ng-if="vm.novo">Create Widget</legend>
+                    <legend ng-if="!vm.novo">Edit Widget</legend>
+
+                    <!-- Name-->
+                    <div class="controls">
+                        Name
+                        <input id="widget-name" ng-model="vm.item.name" required name="widgetname" type="text" placeholder="foo-bar" class="input-medium">
+                    </div>
+                    <!-- Price -->
+                    <div class="controls">
+                        <div class="input-prepend">
+                            Price
+                            <span class="add-on">$</span>
+                            <input ng-model="vm.item.price" id="widget-price" required name="widgetprice" class="input-medium" placeholder="0.00" type="text">
+                        </div>
+                    </div>
+                    <!-- Color -->
+                    <div class="controls">
+                        Color
+                        <select  data-ng-options="act for act in vm.names" id="widget-color" required name="widgetcolor" ng-model="vm.item.color" class="input-large">
+                          
+                        </select>
+                    </div>
+                    <!-- Melts -->
+                    <div class="controls">
+                        Melts
+                        <input type="checkbox" ng-model="vm.item.melts" required name="widget-properties" id="widget-properties-0" value="melts">
+                    </div>
+                    <!-- Inventory -->
+                    <div class="controls">
+                        Inventory
+                        <input inputmode="numeric" ng-model="vm.item.inventory" id="widget-count" required name="widget-count" type="text" placeholder="#?" class="input-small">
+                    </div>
+                    <button class="btn btn-primary" ng-disabled="myForm.$invalid" ng-click="vm.salvar(myForm.$valid)">Save</button>
+                </form>
+            </div><!-- End Widget body -->
+        </div><!-- End Widget -->
+    </div><!-- End Column -->
+</div>
