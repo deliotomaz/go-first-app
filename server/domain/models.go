@@ -1,5 +1,6 @@
 package domain
 
+//User data
 type User struct {
 	ID       int64  `json:"id"`
 	Name     string `json:"name"`
@@ -8,6 +9,7 @@ type User struct {
 
 type Users []User
 
+//Widget data
 type Widget struct {
 	ID        int64  `json:"id"`
 	Name      string `json:"name"`
@@ -18,11 +20,14 @@ type Widget struct {
 }
 type Widgets []Widget
 
+//UserRepository ...interface that define all contracts for User repository
 type UserRepository interface {
 	Count() (int, error)
 	FindById(id int64) (User, error)
 	List() (Users, error)
 }
+
+//WidgetRepository ...interface that define all contracts for Widget repository
 type WidgetRepository interface {
 	Count() (int, error)
 	FindById(id int64) (Widget, error)

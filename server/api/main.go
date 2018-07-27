@@ -26,14 +26,18 @@ func main() {
 
 	router := mux.NewRouter().StrictSlash(true)
 
+	//Create user repository and appservice
 	userRepository := infra.NewUserRepository(mPool, session, infra.MONGODB_DATABASE)
 	userService := service.NewUserAppService(userRepository)
 
+	//Create widget repository and appservice
 	widgetRepository := infra.NewWidgetRepository(mPool, session, infra.MONGODB_DATABASE)
 	widgetService := service.NewWidgetAppService(widgetRepository)
 
+	//build controllers
 	BuildUserHttpHandlers(router, userService)
 	BuildWidgetHttpHandlers(router, widgetService)
+
 	http.Handle("/", router)
 	router.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
@@ -50,23 +54,3 @@ func main() {
 	}
 
 }
-
-// package main
-
-// import (
-// 	"log"
-// 	"net/http"
-// )
-
-// func main() {
-
-// 	router := NewAppRouter()
-// 	allowedOrigins := handlers.AllowedOrigins([]string{"*"})
-// 	allowedMethods := handlers.AllowedMethods([]string{"GET", "POST", "DELETE", "PUT"})
-// 	// http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-// 	// 	fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
-// 	// })
-
-// 	log.Fatal(http.ListenAndServe(":3000", router))
-
-// }

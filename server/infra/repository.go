@@ -93,11 +93,7 @@ func (widgetRepo *WidgetRepository) AddUpdate(widget domain.Widget) error {
 		err = widgetRepo.collection.Insert(&widget)
 		return err
 	} else {
-		// updator := bson.M{"$set": bson.M{"Name": widget.Name,
-		// 								 "Color":widget.Color,
-		// 								"Price":widget.Price,
-		// 							"Inventory":widget.Inventory,
-		// 						"Melts":widget.Melts}}
+
 		err := widgetRepo.collection.Update(bson.M{"id": widget.ID}, &widget)
 		return err
 	}

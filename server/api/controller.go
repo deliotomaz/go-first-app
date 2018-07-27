@@ -14,6 +14,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
+//Configs for middleware  CORS and JWT validation
 var middleWare = negroni.New(
 	negroni.HandlerFunc(utils.Cors),
 	negroni.HandlerFunc(utils.ValidateMiddleware),
@@ -26,6 +27,7 @@ type WidgetHttpHandlers struct {
 	widgetService service.WidgetAppService
 }
 
+//BuildUserHttpHandlers ... Build user routes
 func BuildUserHttpHandlers(r *mux.Router, userService service.UserAppService) {
 	hnd := &UserHttpHandlers{
 		userService: userService,
@@ -35,6 +37,7 @@ func BuildUserHttpHandlers(r *mux.Router, userService service.UserAppService) {
 	r.Handle("/users/{id}", middleWare.With(negroni.Wrap(http.HandlerFunc(hnd.GetUserById)))).Methods("GET", "OPTIONS")
 
 }
+
 func BuildWidgetHttpHandlers(r *mux.Router, widgetService service.WidgetAppService) {
 	hnd := &WidgetHttpHandlers{
 		widgetService: widgetService,
@@ -47,6 +50,7 @@ func BuildWidgetHttpHandlers(r *mux.Router, widgetService service.WidgetAppServi
 
 }
 
+//Handlers for user endpoint request
 func (hnd *UserHttpHandlers) CountUsers(w http.ResponseWriter, r *http.Request) {
 	tot, err := hnd.userService.GetCount()
 	if err == nil {
@@ -85,6 +89,9 @@ func (hnd *UserHttpHandlers) GetUserById(w http.ResponseWriter, r *http.Request)
 
 }
 
+//Handlers for user endpoint request
+
+//Handlers for widget endpoint request
 func (hnd *WidgetHttpHandlers) CountWidgets(w http.ResponseWriter, r *http.Request) {
 	tot, err := hnd.widgetService.GetCount()
 	if err == nil {
@@ -178,3 +185,5 @@ func (hnd *WidgetHttpHandlers) AddWidgets(w http.ResponseWriter, r *http.Request
 	}
 
 }
+
+//Handlers for widget endpoint request

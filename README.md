@@ -42,6 +42,7 @@
 
 Entendo que o teste é simples e uma boa forma de avaliação. Contudo em uma aplicação real eu faria algumas coisas de forma diferente (não apliquei para não descaracterizar o que foi pedido):
  - Para listagem de usuários e widgets retornaria os dados paginados, assim como sua apresentação.
+ - Nas AppServices faria validação das informações enviadas (tipo, obrigatoriedade, etc)
  - A busca não faria no client.
  - Criaria um objeto de resposta padrão que conteria os resultados e informações do response para que um middleware no client possa fazer alguns tratamentos padrão.
   - Como GO é muito novo pra mim, tentei ao máximo implementar uma estrutura consistente e desacoplada (minha preocupação constante), mas devido ao pouco tempo de contato com a linguagem sei que alguns pontos poderiam ser melhores. O fator tempo foi um complicador pra mim.
